@@ -1,9 +1,10 @@
 import React, { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
 import Modal from "react-modal";
+import "./edittask.css"
 
 
-import { editTodo } from "../js/Actions/actions";
+import { deleteTodo, editTodo } from "../js/Actions/actions";
 
 const customStyles = {
   content: {
@@ -39,7 +40,7 @@ const EditTask= ({ todo }) => {
 
   return (
     <Fragment>
-      <button size="30px" onClick={openModal} />
+      <button className="EditDesign" size="30px" onClick={openModal} > Edit</button>
 
       <Modal
         isOpen={modalIsOpen}
@@ -58,7 +59,9 @@ const EditTask= ({ todo }) => {
           </button>
         </form>
       </Modal>
+
     </Fragment>
+    
   );
 };
 

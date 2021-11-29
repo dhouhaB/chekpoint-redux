@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+.Appdesign
+{
+  width: 500px;
+  background-color: cadetblue;
+  margin-left: 400px;
+  height:500px;
+  padding-top: 40px;
+  padding-left: 70px;
+  font-size: large;
+
+
+}

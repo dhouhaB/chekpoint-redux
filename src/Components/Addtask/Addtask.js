@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../js/Actions/actions";
-
+import "./addtask.css"
 const AddTask = () => {
   const [textTodo, setTextTodo] = useState("");
 
@@ -13,12 +13,17 @@ const AddTask = () => {
       id: Math.random(),
       isDone: false,
     };
-    dispatch(addTodo(newTodo));
-    setTextTodo("");
+    if (textTodo === ""){
+      alert ("nothing to do")
+    } else{
+      dispatch(addTodo(newTodo));
+      setTextTodo("");
+    }
+    
   };
 
   return (
-    <div>
+    <div className="designAdd">
       <div className="row m-1 p-4">
         <div className="col">
           <div className="p-1 h1 text-primary text-center mx-auto display-inline-block">
@@ -41,7 +46,7 @@ const AddTask = () => {
             </div>
             <div className="col-auto m-0 px-2 d-flex align-items-center">
               <label className="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">
-                Due date not set
+               
               </label>
               <i
                 className="fa fa-calendar my-2 px-1 text-primary btn due-date-button"
@@ -58,7 +63,7 @@ const AddTask = () => {
             </div>
             <div className="col-auto px-0 mx-0 mr-2">
             
-              <button
+              <button className="designbutton"
                 type="button"
                 className="btn btn-primary"
                 onClick={handelAdd}

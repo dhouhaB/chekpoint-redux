@@ -1,4 +1,5 @@
 import React from "react";
+import "./Task.css"
 import { useDispatch } from "react-redux";
 import EditTask from "../EditTask/EditTask";
 import { completeTodo, deleteTodo } from "../js/Actions/actions";
@@ -16,10 +17,10 @@ const Task = ({ todo }) => {
       >
         {todo.text}
       </span>
-      <i
-        className="fas fa-trash-alt"
+      <button className= "designbutton1"
+        
         onClick={() => dispatch(deleteTodo(todo.id))}
-      ></i>
+      >X </button>
       <EditTask todo={todo} />
     </li>
   );
